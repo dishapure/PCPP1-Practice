@@ -1,0 +1,73 @@
+## gui – meaning, rationale, basic terms
+
+* **meaning**: a graphical user interface (gui) is a human‑computer interaction style that represents information and actions with pictures—windows, icons, menus, pointers—so users can operate software by visual recognition and simple gestures (mouse, touch, keyboard).
+* **rationale**: hides internal complexity, lowers the learning curve, supports direct manipulation, speeds up routine tasks, and reduces errors compared with purely command‑line or text interfaces.
+* **basic terms & definitions**
+
+  * *window*: rectangular screen region containing an application or document.
+  * *viewport*: the visible portion of a larger canvas or document.
+  * *cursor/pointer*: on‑screen indicator of current pointing‑device location.
+  * *focus*: the widget currently receiving keyboard input.
+  * *widget/control*: a reusable gui component (button, label, slider, etc.).
+  * *layout manager*: code that positions and sizes widgets inside a window.
+
+## visual programming
+
+* **definition**: creating programs primarily by arranging visual elements (blocks, nodes, forms) rather than writing textual code line by line.
+* **common examples**:
+
+  * scratch, app inventor → block‑based education.
+  * labview → instrumentation and dataflow.
+  * unreal engine blueprints, node‑red, blender geometry nodes → node graphs.
+  * microsoft visual basic, delphi → form designers with code‑behind.
+* **basic features**
+
+  * drag‑and‑drop composition of blocks/nodes.
+  * immediate visual feedback or live simulation.
+  * automatic code generation behind the scenes.
+  * often domain‑specific, emphasizing flow of data or events.
+
+## widgets / controls – basic terms
+
+* *title bar*: top strip of a window showing its title and window controls (close, minimize, maximize).
+* *button*: clickable control that triggers an action.
+* *icon*: small graphic symbolizing an object, file, or action.
+* *label*: static text or image used for identification or feedback.
+* *entry/text field*: single‑line editable text area.
+* *checkbox*: toggle between on / off states.
+* *radiobutton*: select one option from a group.
+* *frame/panel*: container widget that holds other widgets and may add borders or backgrounds.
+* *canvas*: free‑form drawing surface for shapes, images, or custom graphics.
+
+## classical vs. event‑driven programming
+
+| aspect       | classical (procedural)                                     | event‑driven                                     |
+| ------------ | ---------------------------------------------------------- | ------------------------------------------------ |
+| main flow    | linear sequence determined by the code                     | idle loop waits; callbacks run when events occur |
+| input style  | usually read at specific points (e.g., `scanf`, file read) | asynchronous user actions, timers, I/O signals   |
+| typical use  | batch processing, scripts, scientific workflows            | guis, games, servers, embedded real‑time apps    |
+| control unit | you call functions                                         | the framework calls your handlers                |
+
+## events – basic terms
+
+* *event*: a signal that something happened (mouse click, key press, window resize, timer tick, network packet).
+* *event source* (emitter): object that produces events.
+* *event object*: data structure carrying details (type, coordinates, timestamp, modifiers).
+* *event listener / handler / callback*: function registered to respond to a specific event type.
+* *event queue*: first‑in, first‑out list where the gui toolkit stores pending events.
+* *propagation*: the journey of an event through the widget hierarchy (capturing → target → bubbling).
+
+## widget toolkits / gui toolkits
+
+* **definition**: libraries or frameworks providing pre‑built widgets, rendering services, layout managers, theming, and the event loop so developers can create cross‑platform guis quickly.
+* **popular examples**:
+
+  * tkinter (python stdlib), qt (c++/python), gtk (c/rust/python), wxwidgets (c++), java swing & javafx, .net winforms / wpf, cocoa (mac), flutter, react (web), swiftui.
+* **core responsibilities**
+
+  * standard widget set with native or themed look‑and‑feel.
+  * event dispatching and main loop.
+  * coordinate systems, drawing primitives, double buffering.
+  * layout systems (grid, flex, pack, constraint).
+  * accessibility hooks, internationalisation, style/theming.
+* **immediate vs. retained mode**: some toolkits let you redraw every frame under your control (immediate), while others keep a scene graph and redraw automatically when it changes (retained).
