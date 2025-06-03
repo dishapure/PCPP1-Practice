@@ -1,0 +1,93 @@
+🍼 What is a .ini file?
+A .ini file is a simple text file used to store settings or configuration data.
+
+It usually looks like this:
+
+ini
+Copy
+Edit
+[section_name]
+key = value
+Example:
+
+ini
+Copy
+Edit
+[paths]
+project_folder = /home/me/my_project
+It’s like a notebook where programs store settings like:
+
+file paths
+
+user preferences
+
+options (like "yes" or "no")
+
+🧠 What are we doing with .ini files in Python?
+We're reading them with Python using a built-in tool called configparser.
+
+Think of it like this:
+You're a chef 👩‍🍳 and the .ini file is your recipe book 📖.
+You use configparser to open the recipe and read the ingredients.
+
+🛠️ What is configparser?
+It’s a module in Python that helps you read, write, and update .ini files.
+
+To use it:
+
+python
+Copy
+Edit
+import configparser
+Then, you can read your .ini file:
+
+python
+Copy
+Edit
+config = configparser.ConfigParser()
+config.read('your_file.ini')
+Now, you can get values like:
+
+python
+Copy
+Edit
+print(config['paths']['project_folder'])
+🤔 What is "interpolation"?
+Interpolation means:
+Using one value inside another. Like a shortcut or reference.
+
+Example:
+ini
+Copy
+Edit
+[base]
+home = /home/me
+
+[paths]
+project = %(home)s/my_project
+Notice how project uses %(home)s? That’s interpolation.
+
+Python will replace %(home)s with /home/me, so:
+
+python
+Copy
+Edit
+print(config['paths']['project'])
+gives:
+
+arduino
+Copy
+Edit
+/home/me/my_project
+💡 Why do we use interpolation?
+Avoid repetition – Don’t write /home/me 10 times.
+
+Easy changes – If you move folders, you only change one place.
+
+Cleaner config files – Easier to read and manage.
+
+🚀 Summary:
+Concept	Baby Explanation
+.ini file	A simple file for saving settings
+configparser	A Python tool to read .ini files
+Interpolation	Using a variable inside another value
