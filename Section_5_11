@@ -56,6 +56,8 @@ print(config['paths']['project_folder'])
 Interpolation means:
 Using one value inside another. Like a shortcut or reference.
 
+
+
 Example:
 ini
 Copy
